@@ -19,12 +19,11 @@ import {
 } from "@/lib/campus-store";
 import { clearChat, loadChat, saveChat } from "@/lib/chat-storage";
 
-type Search = { q?: string };
+type Search = { q?: string | undefined };
 
 export const Route = createFileRoute("/tutor")({
-  validateSearch: (search: Record<string, unknown>): Search => ({
-    q: typeof search.q === "string" ? search.q : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): Search =>
+    typeof search["q"] === "string" ? { q: search["q"] } : {},
   head: () => ({
     meta: [
       { title: "AI Tutor — CampusMate AI" },
