@@ -174,7 +174,7 @@ let hydrated = false;
 const listeners = new Set<() => void>();
 
 function emit() {
-  listeners.add;
+  
   listeners.forEach((l) => l());
 }
 
