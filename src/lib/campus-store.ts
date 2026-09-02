@@ -162,9 +162,9 @@ function seedState(): CampusState {
       },
     ],
     plan: null,
-    studyLog: Array.from({ length: 7 }, (_, i) => ({
+    studyLog: [45, 90, 60, 0, 120, 75, 30].map((minutes, i) => ({
       date: addDaysISO(i - 6),
-      minutes: [45, 90, 60, 0, 120, 75, 30][i],
+      minutes,
     })),
   };
 }
